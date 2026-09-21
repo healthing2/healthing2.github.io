@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捉迷藏 - 经典童年游戏规则、玩法技巧与安全指南</title>
+    <meta name="description" content="本站提供捉迷藏的详细游戏规则、安全注意事项、不同场景下的玩法技巧以及适合各年龄段的游戏组织指南。">
+    <meta name="keywords" content="捉迷藏, 童年游戏, 户外游戏, 躲猫猫规则, 家庭游戏">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            list-style-position: inside;
+            margin-left: 10px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        /* Steps Layout */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .step-number {
+            background-color: var(--accent-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: #eef2f7;
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 15px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-secondary);
+        }
+
+        .faq-answer p {
+            padding-bottom: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                捉迷藏
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#rules">游戏规则</a></li>
+                    <li><a href="#safety">安全指南</a></li>
+                    <li><a href="#tips">玩法技巧</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>经典捉迷藏</h1>
+            <p>重拾童年乐趣，探索躲藏与寻找的无限智慧。从户外树林到室内房间，这里为您整理了最全面的游戏指南。</p>
+        </div>
+    </section>
+
+    <main class="container content-grid">
+        <!-- 左侧主要内容区 -->
+        <div class="main-content">
+            
+            <!-- 规则介绍 -->
+            <section id="rules">
+                <h2 class="section-title">游戏基础规则</h2>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h3>确定人数与角色</h3>
+                            <p>通常由一人（“鬼”或“搜寻者”）数数，其余人负责寻找藏身处。人数越多，游戏越有趣，但藏匿难度也越大。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h3>划定安全区域</h3>
+                            <p>所有参与者在藏匿前必须约定好游戏范围。严禁进入危险区域（如马路、深水区、施工地），否则视为“被抓”。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h3>数数与寻找</h3>
+                            <p>“鬼”在原地数数（如“一十百千万”或数到100），数数期间其他人必须迅速藏好。数完后，“鬼”开始寻找。</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h3>判定与淘汰</h3>
+                            <p>“鬼”若发现某人，该人必须离开藏身处去陪“鬼”继续寻找。当所有人都被发现后，最后一名未被发现的参与者获胜。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 安全指南 -->
+            <section id="safety">
+                <h2 class="section-title">安全第一指南</h2>
+                <div class="card">
+                    <h3>防止意外受伤</h3>
+                    <p>在户外玩捉迷藏时，务必检查周围环境。避开松动的井盖、陡峭的坡地或茂密的灌木丛。如果是夜间游戏，务必使用手电筒，并保持同伴间的距离可见。</p>
+                </div>
+                <div class="card">
+                    <h3>防止走失与冲突</h3>
+                    <p>对于低龄儿童，必须由成人陪同。建议将手机号码写在卡片上给每个孩子贴身携带。多人游戏时，应指定明确的“安全边界”，严禁越界。</p>
+                </div>
+            </section>
+
+            <!-- 玩法技巧 -->
+            <section id="tips">
+                <h2 class="section-title">进阶玩法与技巧</h2>
+                <article class="card">
+                    <h3>经典玩法变体</h3>
+                    <ul>
+                        <li><strong>盲人摸象：</strong>“鬼”蒙住眼睛，其他人随机走动，触摸到谁谁就变成下一个“鬼”。</li>
+                        <li><strong>狼人杀式：</strong>所有人在黑暗中移动，触碰对方需低声报出一种动物或数字，猜错者出局。</li>
+                        <li><strong>黑夜模式：</strong>完全关灯，仅依靠微弱的光源或夜视能力，极大增加紧张感。</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>寻找者的策略</h3>
+                    <p>寻找者不应只在原地大喊大叫。建议采取“分区搜索”策略，将大区域划分为若干小块，逐个排查。同时，留意阴影、缝隙和嘈杂声后的突然寂静。</p>
+                </article>
+            </section>
+        </div>
+
+        <!-- 右侧侧边栏 -->
+        <aside class="sidebar">
+            <!-- 游戏分类 -->
+            <div class="sidebar-widget">
+                <h3>游戏场景分类</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">户外树林</a>
+                    <a href="#" class="tag">室内房间</a>
+                    <a href="#" class="tag">学校操场</a>
+                    <a href="#" class="tag">废弃建筑</a>
+                    <a href="#" class="tag">雪地</a>
+                    <a href="#" class="tag">夜间探险</a>
+                </div>
+            </div>
+
+            <!-- 热门话题 -->
+            <div class="sidebar-widget">
+                <h3>热门话题</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">捉迷藏心理学</a>
+                    <a href="#" class="tag">儿童益智游戏</a>
+                    <a href="#" class="tag">宿舍捉迷藏</a>
+                    <a href="#" class="tag">狼人杀规则</a>
+                </div>
+            </div>
+
+            <!-- 常见问题 (FAQ) -->
+            <div class="sidebar-widget">
+                <h3>常见问题 (FAQ)</h3>
+                <div class="faq-item">
+                    <button class="faq-question">捉迷藏适合多大孩子玩？</button>
+                    <div class="faq-answer">
+                        <p>捉迷藏适合3岁以上儿童，但3岁以下幼儿需在成人严密监护下进行，避免因身体协调性不足导致摔伤。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">如果有人藏得太久不出来怎么办？</button>
+                    <div class="faq-answer">
+                        <p>建议设定“超时惩罚”或“强制现身”机制。例如，数到100如果还没被找到，必须主动现身，否则游戏将失去公平性。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">多人游戏怎么分配角色？</button>
+                    <div class="faq-answer">
+                        <p>人数较多时，可以设立“两轮鬼”或“轮流制”，避免一个人一直当鬼导致挫败感。也可以增加“中间人”来协助寻找。</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">游戏百科</a>
+                <a href="#">联系合作</a>
+                <a href="#">免责声明</a>
+            </div>
+            <p>&copy; 2023 经典游戏指南网. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ 交互逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
