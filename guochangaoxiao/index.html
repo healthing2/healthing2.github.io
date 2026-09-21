@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国产搞笑电影-爆笑国产喜剧精选与在线观影指南</title>
+    <meta name="description" content="本站提供海量国产搞笑电影资源推荐，涵盖无厘头喜剧、生活笑剧及经典老片。提供高清在线播放、剧情简介、演员表及观影指南，助您寻找最适合的开心源泉。">
+    <meta name="keywords" content="国产搞笑电影,国产喜剧,在线观影,搞笑电影推荐,无厘头喜剧">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #2ed573;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --bg-body: #f1f2f6;
+            --bg-card: #ffffff;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            height: var(--header-height);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            display: flex;
+            background: #f1f2f6;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 200px;
+        }
+
+        .search-box button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .section-more {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .section-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .movie-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-cover {
+            position: relative;
+            width: 100%;
+            padding-top: 140%; /* Aspect ratio for posters */
+            background-color: #ddd;
+        }
+
+        .card-cover img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .card-info {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .card-rating {
+            color: #f1c40f;
+            font-weight: bold;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-light);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Categories Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            background: #fff5f5;
+        }
+
+        .cat-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cat-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Info Section */
+        .info-section {
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+
+        .info-img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .info-content h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .info-content p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .icon-plus {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #2f3542;
+            color: #a4b0be;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #3d464f;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .search-box {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>😄</span> 搞笑影院
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">最新上映</a></li>
+                    <li><a href="#">经典回顾</a></li>
+                    <li><a href="#">榜单</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索国产搞笑电影...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>笑口常开，治愈一切不开心</h1>
+            <p>精选全网高分国产喜剧，从无厘头经典到当代生活爆笑剧，为您打造专属的快乐源泉。</p>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Category Navigation -->
+        <section>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <span class="cat-icon">🤣</span>
+                    <div class="cat-name">无厘头喜剧</div>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">😂</span>
+                    <div class="cat-name">生活笑剧</div>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">🎭</span>
+                    <div class="cat-name">古装爆笑</div>
+                </div>
+                <div class="category-card">
+                    <span class="cat-icon">👨‍👩‍👧‍👦</span>
+                    <div class="cat-name">家庭伦理</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Movies -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">本周热门推荐</h2>
+                <a href="#" class="section-more">查看更多 ></a>
+            </div>
+            <div class="movie-grid">
+                <!-- Movie Card 1 -->
+                <article class="movie-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comedy1/300/420" alt="电影海报">
+                        <span class="card-tag">高清</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">疯狂的石头</h3>
+                        <div class="card-meta">
+                            <span>2006</span>
+                            <span class="card-rating">9.2</span>
+                        </div>
+                        <p class="card-desc">一部极具黑色幽默风格的国产电影，通过多线叙事展现了重庆小人物的悲喜人生。</p>
+                    </div>
+                </article>
+
+                <!-- Movie Card 2 -->
+                <article class="movie-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comedy2/300/420" alt="电影海报">
+                        <span class="card-tag">4K</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">人在囧途</h3>
+                        <div class="card-meta">
+                            <span>2010</span>
+                            <span class="card-rating">8.8</span>
+                        </div>
+                        <p class="card-desc">讲述了一位大老板和一位民工在春运返乡途中发生的啼笑皆非的遭遇。</p>
+                    </div>
+                </article>
+
+                <!-- Movie Card 3 -->
+                <article class="movie-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comedy3/300/420" alt="电影海报">
+                        <span class="card-tag">热门</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">夏洛特烦恼</h3>
+                        <div class="card-meta">
+                            <span>2015</span>
+                            <span class="card-rating">8.5</span>
+                        </div>
+                        <p class="card-desc">穿越时空的爆笑喜剧，夏洛在梦里重新演绎人生，最终明白珍惜眼前人的真谛。</p>
+                    </div>
+                </article>
+
+                <!-- Movie Card 4 -->
+                <article class="movie-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comedy4/300/420" alt="电影海报">
+                        <span class="card-tag">经典</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">唐伯虎点秋香</h3>
+                        <div class="card-meta">
+                            <span>1993</span>
+                            <span class="card-rating">9.0</span>
+                        </div>
+                        <p class="card-desc">周星驰经典无厘头代表作，华丽的视觉效果与夸张的表演令人捧腹。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <div class="info-grid">
+                <img src="https://picsum.photos/seed/comedy5/400/300" alt="喜剧电影魅力" class="info-img">
+                <div class="info-content">
+                    <h2>为什么我们离不开国产搞笑电影？</h2>
+                    <p>国产搞笑电影作为大众娱乐的重要组成部分，不仅承担着娱乐大众的功能，更在社会心理层面发挥着独特的调节作用。在快节奏的现代生活中，压力无处不在，一部优秀的国产喜剧往往能成为人们释放情绪的出口。</p>
+                    <p>从早期的“北影三剑客”到如今的“开心麻花”系列，国产喜剧在叙事手法和表现形式上不断创新。它既有对现实生活的辛辣讽刺，也有对人性温暖的温情描绘。无论是古装剧中的嬉笑怒骂，还是现代剧中的家庭琐事，都能让观众在笑声中产生共鸣。</p>
+                    <p>选择一部适合自己的国产搞笑电影，是周末放松的最佳方式。我们推荐您尝试不同风格的影片，体验从幽默到深思的完整观影过程。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ranking List -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">高分口碑榜</h2>
+                <a href="#" class="section-more">查看完整榜单 ></a>
+            </div>
+            <div class="movie-grid">
+                <article class="movie-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comedy6/300/420" alt="电影海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">功夫</h3>
+                        <div class="card-meta">
+                            <span>2004</span>
+                            <span class="card-rating">9.4</span>
+                        </div>
+                        <p class="card-desc">周星驰导演并主演，将武侠动作与无厘头喜剧完美融合的巅峰之作。</p>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comedy7/300/420" alt="电影海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">大话西游</h3>
+                        <div class="card-meta">
+                            <span>1995</span>
+                            <span class="card-rating">9.2</span>
+                        </div>
+                        <p class="card-desc">跨越时空的爱情悲剧与黑色幽默，华语影史不可逾越的经典。</p>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comedy8/300/420" alt="电影海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">羞羞的铁拳</h3>
+                        <div class="card-meta">
+                            <span>2017</span>
+                            <span class="card-rating">7.8</span>
+                        </div>
+                        <p class="card-desc">开心麻花团队出品，男女互换身体后的爆笑故事，笑点密集。</p>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="card-cover">
+                        <img src="https://picsum.photos/seed/comedy9/300/420" alt="电影海报">
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">你好，李焕英</h3>
+                        <div class="card-meta">
+                            <span>2021</span>
+                            <span class="card-rating">8.3</span>
+                        </div>
+                        <p class="card-desc">穿越回80年代的母亲，在欢笑中蕴含着催人泪下的亲情。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">哪里可以免费看高清国产搞笑电影？ <span class="icon-plus">+</span></div>
+                <div class="faq-answer">本站提供正版授权的在线播放服务，请支持正版，享受高清流畅的观影体验。部分经典老片可能受版权保护限制，建议通过正规视频平台观看。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">国产搞笑电影有哪些经典流派？ <span class="icon-plus">+</span></div>
+                <div class="faq-answer">国产喜剧主要分为无厘头喜剧（如周星驰电影）、生活笑剧（如《人在囧途》系列）、古装爆笑（如《唐伯虎点秋香》）以及近年来流行的黑色幽默和公路喜剧。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">适合和家人一起看的国产喜剧有哪些？ <span class="icon-plus">+</span></div>
+                <div class="faq-answer">推荐《夏洛特烦恼》、《你好，李焕英》、《飞驰人生》等作品，这些电影既有笑点，又蕴含亲情与友情，非常适合全家老小一起观看。</div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">合作联系</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>影片分类</h4>
+                    <ul>
+                        <li><a href="#">无厘头喜剧</a></li>
+                        <li><a href="#">古装爆笑</a></li>
+                        <li><a href="#">家庭伦理</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">播放器问题</a></li>
+                        <li><a href="#">VIP会员</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <p>获取最新搞笑电影资讯与独家福利</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 国产搞笑电影精选网. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
