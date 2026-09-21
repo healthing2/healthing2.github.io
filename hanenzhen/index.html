@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩恩贞个人资料、影视作品、时尚穿搭及粉丝社区互动指南。收录韩恩贞经典电影、电视剧及最新动态，提供高清剧照与深度影评。">
+    <meta name="keywords" content="韩恩贞, 韩恩贞个人资料, 韩恩贞作品, 韩恩贞电影, 韩恩贞电视剧">
+    <title>韩恩贞 - 经典影视与时尚偶像档案</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #212121;
+            --accent-color: #f5f5f5;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #ffffff;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #2c3e50, #000000);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://picsum.photos/seed/hanennyeong/1600/900'); /* Placeholder for visual */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            padding: 80px 0;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .profile-img {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .profile-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .profile-tags {
+            margin-bottom: 24px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .profile-bio {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .info-list dt {
+            font-weight: 600;
+            margin-top: 16px;
+            color: var(--secondary-color);
+        }
+
+        .info-list dd {
+            margin-left: 0;
+            color: var(--text-light);
+        }
+
+        /* Works Section */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 48px;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .works-section {
+            padding: 80px 0;
+            background-color: #fafafa;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .work-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border: 1px solid #eee;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .work-poster {
+            height: 400px;
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .work-info {
+            padding: 20px;
+        }
+
+        .work-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--secondary-color);
+        }
+
+        .work-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .work-meta span {
+            margin-right: 12px;
+        }
+
+        /* Awards Section */
+        .awards-section {
+            padding: 80px 0;
+        }
+
+        .awards-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+
+        .award-item {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            background: #fff;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .award-year {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ddd;
+            line-height: 1;
+        }
+
+        .award-details h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .award-details p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .profile-grid { grid-template-columns: 1fr; text-align: center; }
+            .profile-tags { justify-content: center; }
+            .nav-wrapper { flex-direction: column; height: auto; padding: 15px 0; }
+            nav ul { margin-top: 15px; gap: 15px; font-size: 0.9rem; }
+            .profile-info dt { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">韩恩贞<span>档案</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">个人简介</a></li>
+                    <li><a href="#">影视作品</a></li>
+                    <li><a href="#">时尚杂志</a></li>
+                    <li><a href="#">粉丝社区</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>韩恩贞</h1>
+                    <p>韩国知名演员、模特，以清新自然的演技和时尚品味闻名。从《蓝色生死恋》到《我叫金三顺》，她留下了众多经典荧幕形象。</p>
+                    <a href="#works" class="btn">浏览代表作品</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="container">
+                <div class="profile-grid">
+                    <div class="profile-img">
+                        <img src="https://picsum.photos/seed/hanennyeong_portrait/400/500" alt="韩恩贞肖像">
+                    </div>
+                    <div class="profile-info">
+                        <h2>关于韩恩贞</h2>
+                        <div class="profile-tags">
+                            <span class="tag">1976年9月22日出生</span>
+                            <span class="tag">身高：165cm</span>
+                            <span class="tag">体重：48kg</span>
+                            <span class="tag">所属社：Namoo Actors</span>
+                        </div>
+                        <p class="profile-bio">
+                            韩恩贞（Han Ye-jin），韩国著名女演员兼模特。她于1996年通过模特比赛出道，随后转型为演员。韩恩贞以其独特的大气五官和亲和力十足的形象，在时尚界和演艺界都取得了极高的成就。她不仅在多部电视剧中担任女主角，还多次登上国际时尚杂志封面，是韩国具有代表性的“国民女演员”之一。
+                        </p>
+                        <dl class="info-list">
+                            <dt>教育背景</dt>
+                            <dd>檀国大学戏剧电影学系</dd>
+                            <dt>出道经历</dt>
+                            <dd>1996年 MBC模特大赛冠军</dd>
+                            <dt>代表作品</dt>
+                            <dd>《蓝色生死恋》、《我叫金三顺》、《雪之女王》</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" class="works-section">
+            <div class="container">
+                <h2 class="section-title">精选影视作品</h2>
+                <div class="works-grid">
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <img src="https://picsum.photos/seed/autumn/300/400" alt="蓝色生死恋海报">
+                        </div>
+                        <div class="info">
+                            <h3 class="work-title">蓝色生死恋 (2000)</h3>
+                            <div class="work-meta">
+                                <span>类型：爱情 / 剧情</span>
+                                <span>角色：崔芯爱</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <img src="https://picsum.photos/seed/sunmi/300/400" alt="我叫金三顺海报">
+                        </div>
+                        <div class="info">
+                            <h3 class="work-title">我叫金三顺 (2005)</h3>
+                            <div class="work-meta">
+                                <span>类型：爱情 / 喜剧</span>
+                                <span>角色：姜熙建</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <img src="https://picsum.photos/seed/snow/300/400" alt="雪之女王海报">
+                        </div>
+                        <div class="info">
+                            <h3 class="work-title">雪之女王 (2006)</h3>
+                            <div class="work-meta">
+                                <span>类型：奇幻 / 爱情</span>
+                                <span>角色：格尔达</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <img src="https://picsum.photos/seed/secret/300/400" alt="秘密花园海报">
+                        </div>
+                        <div class="info">
+                            <h3 class="work-title">秘密花园 (2010)</h3>
+                            <div class="work-meta">
+                                <span>类型：爱情 / 奇幻</span>
+                                <span>角色：罗琳</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section -->
+        <section class="awards-section">
+            <div class="container">
+                <h2 class="section-title">主要获奖记录</h2>
+                <div class="awards-list">
+                    <div class="award-item">
+                        <div class="award-year">2000</div>
+                        <div class="award-details">
+                            <h3>KBS演技大赏 新人奖</h3>
+                            <p>凭借《蓝色生死恋》中崔芯爱一角获得认可。</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-year">2006</div>
+                        <div class="award-details">
+                            <h3>百想艺术大赏 女子最佳演技赏</h3>
+                            <p>《雪之女王》与《悲伤恋歌》的双重提名与肯定。</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-year">2011</div>
+                        <div class="award-details">
+                            <h3>韩国大众文化赏 艺术赏</h3>
+                            <p>韩国文化体育观光部长官表彰，表彰其在演艺界的贡献。</p>
+                        </div>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-year">2018</div>
+                        <div class="award-details">
+                            <h3>韩国电视剧大赏 最佳女配角赏</h3>
+                            <p>凭借《我的大叔》获得观众与评委一致好评。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section style="padding: 80px 0; background: #fff;">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
+                        <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem;">韩恩贞最近在忙什么？</summary>
+                        <p style="margin-top: 10px; color: #666;">韩恩贞近年来作品相对较少，主要专注于家庭生活，偶尔出演口碑剧集（如《我的大叔》）。近期公开行程中较少出现，属于半隐退状态。</p>
+                    </details>
+                    <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
+                        <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem;">韩恩贞和宋承宪是什么关系？</summary>
+                        <p style="margin-top: 10px; color: #666;">两人因拍摄电视剧《蓝色生死恋》相识相恋，是韩国演艺圈著名的金童玉女，曾于2008年结婚，但于2014年宣布离婚。</p>
+                    </details>
+                    <details style="margin-bottom: 16px; border-bottom: 1px solid #eee; padding-bottom: 16px;">
+                        <summary style="cursor: pointer; font-weight: 600; font-size: 1.1rem;">韩恩贞的代表作有哪些？</summary>
+                        <p style="margin-top: 10px; color: #666;">她的代表作包括《蓝色生死恋》、《我叫金三顺》、《雪之女王》、《秘密花园》以及电影《悲伤恋歌》等。</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #aaa; font-size: 0.9rem;">本站致力于收录韩恩贞女士的影视资料、时尚资讯及粉丝社区互动内容，仅供粉丝交流与资料整理使用。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">个人简介</a></li>
+                        <li><a href="#">电视剧列表</a></li>
+                        <li><a href="#">电影作品</a></li>
+                        <li><a href="#">时尚杂志</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">韩国电影振兴委员会</a></li>
+                        <li><a href="#">Namoo Actors 官网</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 韩恩贞粉丝资料站. All Rights Reserved. 本站内容仅供学习参考，非官方网站。
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
