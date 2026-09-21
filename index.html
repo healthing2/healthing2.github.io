@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="咕咕是一只猫百度影音 - 咕咕是一只猫的精彩视频内容收录，提供高清在线观看与资源下载指南。">
+    <meta name="keywords" content="咕咕是一只猫百度影音, 咕咕是一只猫, 猫咪视频, 百度影音, 在线观看">
+    <title>咕咕是一只猫百度影音 - 咕咕是一只猫高清视频资源与在线观看指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff9f43;
+            --secondary-color: #ee5253;
+            --dark-bg: #2d3436;
+            --light-bg: #f5f6fa;
+            --text-color: #2d3436;
+            --text-light: #dfe6e9;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            outline: none;
+            width: 200px;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            width: 240px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ff9f43 0%, #ee5253 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            background-color: white;
+            color: var(--secondary-color);
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Main Content Layout */
+        main {
+            padding: 40px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Video Section */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            transition: var(--transition);
+        }
+
+        .video-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .thumbnail {
+            width: 320px;
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            pointer-events: none;
+        }
+
+        .video-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+
+        .video-meta {
+            font-size: 0.9rem;
+            color: #636e72;
+            margin-bottom: 15px;
+        }
+
+        .video-desc {
+            font-size: 0.95rem;
+            color: #636e72;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .video-actions {
+            margin-top: auto;
+            display: flex;
+            gap: 15px;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background-color: #ffeaa7;
+            color: #d35400;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .rank-list {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rank-item:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 15px;
+            color: white;
+        }
+
+        .rank-num.top1 { background-color: #ff4757; }
+        .rank-num.top2 { background-color: #ffa502; }
+        .rank-num.top3 { background-color: #2ed573; }
+        .rank-num.other { background-color: #a4b0be; }
+
+        .rank-title {
+            font-size: 0.95rem;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .download-link {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .category-cloud {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .cloud-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .cloud-tag {
+            padding: 5px 12px;
+            background-color: #f1f2f6;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .cloud-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: white;
+            padding: 50px 0;
+            margin-top: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-text {
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #b2bec3;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-card {
+                flex-direction: column;
+            }
+
+            .thumbnail {
+                width: 100%;
+                height: 200px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>🐱</span> 咕咕是一只猫
+            </a>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">高清视频</a>
+                <a href="#">番剧剧场</a>
+                <a href="#">资源下载</a>
+                <a href="#">关于我们</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索视频...">
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>咕咕是一只猫 百度影音</h1>
+            <p>探索“咕咕是一只猫”的精彩视频世界，提供高清在线播放与本地资源下载服务。汇聚全网优质猫咪内容与趣味动画。</p>
+            <a href="#videos" class="btn">立即观看</a>
+        </div>
+    </section>
+
+    <main class="container" id="videos">
+        <div class="content-grid">
+            <!-- 左侧：视频列表 -->
+            <section class="video-section">
+                <div class="section-title">
+                    <span>热门推荐</span>
+                    <a href="#" style="font-size: 0.9rem; color: var(--secondary-color);">查看更多 ></a>
+                </div>
+
+                <div class="video-list">
+                    <!-- Video Card 1 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/cat1/320/180" alt="猫咪特写">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <h2 class="video-title">咕咕是一只猫：萌宠日常大揭秘</h2>
+                            <div class="video-meta">
+                                <span>更新至: 第12集</span> | <span>时长: 08:32</span> | <span>播放: 12.5万</span>
+                            </div>
+                            <p class="video-desc">
+                                本期内容记录了咕咕在午后的阳光下的惬意时光，展示了猫咪独特的捕猎本能与温柔的一面。高清画质，百度影音播放器支持，体验极佳。
+                            </p>
+                            <div class="video-actions">
+                                <span class="tag">高清</span>
+                                <span class="tag">萌宠</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 2 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/cat2/320/180" alt="猫咪玩耍">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <h2 class="video-title">咕咕是一只猫：趣味互动大挑战</h2>
+                            <div class="video-meta">
+                                <span>更新至: 第13集</span> | <span>时长: 05:45</span> | <span>播放: 8.9万</span>
+                            </div>
+                            <p class="video-desc">
+                                猫咪与主人之间的趣味互动游戏，咕咕展现了惊人的敏捷身手。适合全家观看，轻松解压。
+                            </p>
+                            <div class="video-actions">
+                                <span class="tag">趣味</span>
+                                <span class="tag">互动</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Video Card 3 -->
+                    <article class="video-card">
+                        <div class="thumbnail">
+                            <img src="https://picsum.photos/seed/cat3/320/180" alt="猫咪睡觉">
+                            <div class="play-icon">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <h2 class="video-title">咕咕是一只猫：治愈系深夜放送</h2>
+                            <div class="video-meta">
+                                <span>更新至: 第14集</span> | <span>时长: 10:12</span> | <span>播放: 15.2万</span>
+                            </div>
+                            <p class="video-desc">
+                                沉浸式体验咕咕的睡眠时光，柔和的灯光与舒缓的背景音乐，为疲惫的一天画上完美的句号。
+                            </p>
+                            <div class="video-actions">
+                                <span class="tag">治愈</span>
+                                <span class="tag">助眠</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 右侧：侧边栏 -->
+            <aside>
+                <!-- 排行榜 -->
+                <div class="rank-list">
+                    <div class="section-title" style="font-size: 1.2rem; border:none; padding:0; margin-bottom:15px;">
+                        <span>本周热门</span>
+                    </div>
+                    <ul class="rank-list">
+                        <li class="rank-item">
+                            <div class="rank-num top1">1</div>
+                            <div class="rank-title">咕咕是一只猫：神秘森林探险</div>
+                            <a href="#" class="download-link">下载</a>
+                        </li>
+                        <li class="rank-item">
+                            <div class="rank-num top2">2</div>
+                            <div class="rank-title">咕咕是一只猫：节日特别篇</div>
+                            <a href="#" class="download-link">下载</a>
+                        </li>
+                        <li class="rank-item">
+                            <div class="rank-num top3">3</div>
+                            <div class="rank-title">咕咕是一只猫：新手饲养指南</div>
+                            <a href="#" class="download-link">下载</a>
+                        </li>
+                        <li class="rank-item">
+                            <div class="rank-num other">4</div>
+                            <div class="rank-title">咕咕是一只猫：猫咪行为心理学</div>
+                            <a href="#" class="download-link">下载</a>
+                        </li>
+                        <li class="rank-item">
+                            <div class="rank-num other">5</div>
+                            <div class="rank-title">咕咕是一只猫：幕后花絮</div>
+                            <a href="#" class="download-link">下载</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 标签云 -->
+                <div class="category-cloud">
+                    <div class="section-title" style="font-size: 1.2rem; border:none; padding:0; margin-bottom:15px;">
+                        <span>热门标签</span>
+                    </div>
+                    <div class="cloud-tags">
+                        <a href="#" class="cloud-tag">萌宠</a>
+                        <a href="#" class="cloud-tag">治愈</a>
+                        <a href="#" class="cloud-tag">百度影音</a>
+                        <a href="#" class="cloud-tag">高清</a>
+                        <a href="#" class="cloud-tag">番剧</a>
+                        <a href="#" class="cloud-tag">在线观看</a>
+                        <a href="#" class="cloud-tag">下载</a>
+                        <a href="#" class="cloud-tag">猫咪</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">极速播放</h3>
+                    <p class="feature-text">基于百度影音内核优化，加载速度快，支持断点续播，告别卡顿。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💾</div>
+                    <h3 class="feature-title">本地缓存</h3>
+                    <p class="feature-text">支持一键缓存至本地，离线观看，随时随地享受“咕咕是一只猫”。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📺</div>
+                    <h3 class="feature-title">高清画质</h3>
+                    <p class="feature-text">提供多种清晰度选择，包括高清、超清及蓝光画质，细节清晰可见。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于咕咕是一只猫</h3>
+                    <p style="font-size: 0.9rem; color: #b2bec3; line-height: 1.8;">
+                        我们致力于为用户提供最优质的猫咪内容与视频资源。通过百度影音播放技术，让每一帧画面都生动呈现。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">网站首页</a></li>
+                        <li><a href="#">视频库</a></li>
+                        <li><a href="#">下载中心</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>友情链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">百度影音</a></li>
+                        <li><a href="#">萌宠社区</a></li>
+                        <li><a href="#">猫咪之家</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 咕咕是一只猫百度影音资源站 版权所有. 本站资源仅供学习交流使用.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
