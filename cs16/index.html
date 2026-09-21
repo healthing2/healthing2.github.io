@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cs1.6中文单机版 - 经典反恐精英1.6离线游玩与配置指南</title>
+    <meta name="description" content="本站提供cs1.6中文单机版的完整下载资源、安装教程、地图MOD推荐及按键设置指南，助您在本地电脑重温经典FPS射击游戏的乐趣。">
+    <meta name="keywords" content="cs1.6中文单机版,cs1.6下载,反恐精英1.6,CS1.6地图,CS1.6按键设置,CS1.6中文补丁">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e67e22;
+            --secondary-color: #2c3e50;
+            --bg-dark: #1a1a1a;
+            --bg-card: #2d2d2d;
+            --text-main: #ecf0f1;
+            --text-muted: #bdc3c7;
+            --accent-green: #27ae60;
+            --accent-red: #c0392b;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --border-radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(44, 62, 80, 0.95);
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .download-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #d35400;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/cstrike/1600/900') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--text-main);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Content Sections */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-md);
+            border-left: 5px solid var(--primary-color);
+            padding-left: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .card-img {
+            height: 160px;
+            background-color: #34495e;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-body {
+            padding: var(--spacing-md);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-main);
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-md);
+            flex: 1;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .sidebar-widget {
+            background-color: var(--bg-card);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid #444;
+            color: var(--primary-color);
+        }
+
+        .install-steps {
+            counter-reset: step;
+        }
+
+        .install-step {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .install-step::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .install-step h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .install-step p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .faq-item {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 4px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            padding-left: 10px;
+            border-left: 2px solid #555;
+        }
+
+        /* Map Gallery */
+        .map-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .map-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .map-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .map-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            padding: 20px;
+        }
+
+        .map-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .map-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .map-tag {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: var(--spacing-lg) 0;
+            margin-top: var(--spacing-lg);
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h5 {
+            color: var(--text-main);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: var(--spacing-md) 0;
+                gap: var(--spacing-md);
+            }
+
+            nav ul {
+                gap: var(--spacing-md);
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .map-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <div class="logo">CS<span>1.6</span> 玩家之家</div>
+            <nav>
+                <ul>
+                    <li><a href="#download">下载中心</a></li>
+                    <li><a href="#guide">安装教程</a></li>
+                    <li><a href="#maps">经典地图</a></li>
+                    <li><a href="#setup">按键设置</a></li>
+                </ul>
+            </nav>
+            <button class="download-btn" onclick="document.getElementById('download').scrollIntoView({behavior: 'smooth'})">立即下载</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>重温经典：CS 1.6 中文单机版</h1>
+                <p>无需联网，无需配置复杂的Steam环境，一键安装，即刻体验最纯粹的战术射击乐趣。</p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">获取完整版资源</a>
+                    <a href="#guide" class="btn btn-secondary">查看安装步骤</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="main-layout">
+                <!-- Left Column -->
+                <div class="content-area">
+                    
+                    <!-- Download Section -->
+                    <section id="download" class="mb-4">
+                        <div class="section-title">
+                            <span>资源下载</span>
+                            <span style="font-size: 0.9rem; color: var(--text-muted); font-weight: normal;">包含完整中文语音与模型</span>
+                        </div>
+                        <div class="card-grid">
+                            <article class="card">
+                                <div class="card-img" style="background-image: url('https://picsum.photos/seed/cstrike1/400/250');"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">CS 1.6 官方原版整合包</h3>
+                                    <p class="card-text">包含所有经典地图、官方模型、中文语言包及Steam免安装版核心文件。适合新手直接体验。</p>
+                                    <a href="#" class="card-link">下载资源 &rarr;</a>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <div class="card-img" style="background-image: url('https://picsum.photos/seed/cstrike2/400/250');"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">CS 1.6 高清模型增强版</h3>
+                                    <p class="card-text">替换了原有的低分辨率模型，优化了贴图精度，视觉效果更清晰，手感更细腻。</p>
+                                    <a href="#" class="card-link">下载资源 &rarr;</a>
+                                </div>
+                            </article>
+                            <article class="card">
+                                <div class="card-img" style="background-image: url('https://picsum.photos/seed/cstrike3/400/250');"></div>
+                                <div class="card-body">
+                                    <h3 class="card-title">僵尸求生模式插件包</h3>
+                                    <p class="card-text">集成了经典的ZM（僵尸）模组，支持单人对抗AI僵尸，还原网吧怀旧氛围。</p>
+                                    <a href="#" class="card-link">下载资源 &rarr;</a>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Classic Maps Section -->
+                    <section id="maps" class="mb-4">
+                        <div class="section-title">经典地图鉴赏</div>
+                        <p style="margin-bottom: 20px; color: var(--text-muted);">CS 1.6 的地图设计至今仍是FPS游戏的标杆。</p>
+                        <div class="map-gallery">
+                            <div class="map-item">
+                                <img src="https://picsum.photos/seed/dust2/600/400" alt="Dust2">
+                                <div class="map-overlay">
+                                    <div class="map-name">Dust2 (沙漠二)</div>
+                                    <div class="map-tag">爆破 / 经典</div>
+                                </div>
+                            </div>
+                            <div class="map-item">
+                                <img src="https://picsum.photos/seed/inferno/600/400" alt="Inferno">
+                                <div class="map-overlay">
+                                    <div class="map-name">Inferno (炼狱小镇)</div>
+                                    <div class="map-tag">爆破 / 战术</div>
+                                </div>
+                            </div>
+                            <div class="map-item">
+                                <img src="https://picsum.photos/seed/nuke/600/400" alt="Nuke">
+                                <div class="map-overlay">
+                                    <div class="map-name">Nuke (核子危机)</div>
+                                    <div class="map-tag">爆破 / 复杂</div>
+                                </div>
+                            </div>
+                            <div class="map-item">
+                                <img src="https://picsum.photos/seed/office/600/400" alt="Office">
+                                <div class="map-overlay">
+                                    <div class="map-name">Office (办公室)</div>
+                                    <div class="map-tag">爆破 / 室内</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Setup Guide -->
+                    <section id="setup" class="mb-4">
+                        <div class="section-title">快捷键与操作指南</div>
+                        <div class="card-grid">
+                            <article class="card" style="padding: 20px;">
+                                <h4 style="color: var(--primary-color); margin-bottom: 10px;">基本射击与移动</h4>
+                                <ul style="font-size: 0.9rem; color: var(--text-muted); line-height: 2;">
+                                    <li><strong>W A S D</strong> - 移动角色</li>
+                                    <li><strong>鼠标左键</strong> - 射击</li>
+                                    <li><strong>鼠标右键</strong> - 瞄准/开镜</li>
+                                    <li><strong>空格键</strong> - 跳跃</li>
+                                    <li><strong>Shift</strong> - 慢走/静步</li>
+                                </ul>
+                            </article>
+                            <article class="card" style="padding: 20px;">
+                                <h4 style="color: var(--primary-color); margin-bottom: 10px;">武器切换与战术</h4>
+                                <ul style="font-size: 0.9rem; color: var(--text-muted); line-height: 2;">
+                                    <li><strong>1 - 5</strong> - 切换主武器</li>
+                                    <li><strong>R</strong> - 换弹</li>
+                                    <li><strong>G</strong> - 投掷武器</li>
+                                    <li><strong>F</strong> - 开关手电筒</li>
+                                    <li><strong>Ctrl</strong> - 蹲下</li>
+                                </ul>
+                            </article>
+                            <article class="card" style="padding: 20px;">
+                                <h4 style="color: var(--primary-color); margin-bottom: 10px;">控制台与控制</h4>
+                                <ul style="font-size: 0.9rem; color: var(--text-muted); line-height: 2;">
+                                    <li><strong>Tab</strong> - 查看战绩</li>
+                                    <li><strong>Y / T</strong> - 聊天</li>
+                                    <li><strong>Esc</strong> - 暂停/菜单</li>
+                                    <li><strong>~ (波浪号)</strong> - 打开控制台</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </section>
+
+                </div>
+
+                <!-- Right Sidebar -->
+                <aside>
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">快速安装指南</h3>
+                        <div class="install-steps">
+                            <div class="install-step">
+                                <h4>1. 解压资源包</h4>
+                                <p>将下载的压缩包解压到任意非系统盘的文件夹中。</p>
+                            </div>
+                            <div class="install-step">
+                                <h4>2. 运行启动器</h4>
+                                <p>双击 "CS1.6启动.exe" 或 "cstrike.exe" 即可进入游戏。</p>
+                            </div>
+                            <div class="install-step">
+                                <h4>3. 配置设置</h4>
+                                <p>在游戏中按 `~` 打开控制台，输入 `fps_max 400` 以获得最佳帧率。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">常见问题 (FAQ)</h3>
+                        <div class="faq-item">
+                            <div class="faq-question">Q: 游戏无法启动怎么办？</div>
+                            <div class="faq-answer">A: 请检查是否安装了 DirectX 9.0c 组件，或尝试以管理员身份运行游戏。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Q: 如何开启中文语音？</div>
+                            <div class="faq-answer">A: 在设置中找到语言选项，选择 "Chinese" 或 "Simplified Chinese"。</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">Q: 支持多人联机吗？</div>
+                            <div class="faq-answer">A: 此资源主要为单机版，如需联机请配置局域网IP或使用第三方平台。</div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-title">游戏贴士</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">
+                            在 CS 1.6 中，准心在掩体边缘时开枪容易产生"压枪"效果。利用好投掷物（如闪光弹、烟雾弹）可以改变战局走向。静步走（Shift）在爆破模式中至关重要。
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h5>关于 CS 1.6</h5>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">
+                        反恐精英 1.6 是 Valve 开发的经典第一人称射击游戏，以其平衡的竞技性和丰富的模组生态至今仍拥有大量玩家。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h5>快速链接</h5>
+                    <ul>
+                        <li><a href="#download">下载资源</a></li>
+                        <li><a href="#guide">安装教程</a></li>
+                        <li><a href="#setup">按键设置</a></li>
+                        <li><a href="#">地图下载站</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>相关模组</h5>
+                    <ul>
+                        <li><a href="#">僵尸危机</a></li>
+                        <li><a href="#">跑酷地图</a></li>
+                        <li><a href="#">枪战竞技</a></li>
+                        <li><a href="#">生存挑战</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 CS 1.6 中文单机版玩家之家. All rights reserved. 本站资源仅供学习交流使用.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                          </html>
